@@ -11,7 +11,7 @@
     "prettier:write": "npx prettier --write .",
     "eslint": "npx eslint \"**/*.js\"",
     "prepare": "husky install",
-    "husky": "npm prettier:write && npm eslint"
+    "husky": "npm run prettier:write && npm run eslint"
   },
   "dependencies": {
     "next": "12.1.6",
@@ -28,6 +28,7 @@
     "eslint-plugin-react-hooks": "^4.5.0",
     "eslint-plugin-storybook": "^0.5.11",
     "husky": "^8.0.1",
+    "lint-staged": "^12.4.1",
     "prettier": "^2.6.2"
   }
 }
