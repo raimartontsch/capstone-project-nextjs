@@ -9,7 +9,7 @@
     "lint": "next lint",
     "prettier:check": "npx prettier --check .",
     "prettier:write": "npx prettier --write .",
-    "eslint": "npx eslint \"**/*.js\"",
+    "eslint": "npx eslint \"**/*.{js,jsx}\"",
     "prepare": "husky install",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
