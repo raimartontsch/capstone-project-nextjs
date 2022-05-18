@@ -2,11 +2,11 @@ import useStore from './Store';
 import { useForm } from 'react-hook-form';
 
 export default function MyContactDetailForm() {
-	const { register, handleSubmit } = useForm();
+	const { register, handleSubmit, reset } = useForm();
 
-	const onSubmit = (contact, event) => {
+	const onSubmit = contact => {
 		addMyContact(contact);
-		event.target.reset();
+		reset();
 	};
 
 	const addMyContact = useStore(state => state.addMyContact);

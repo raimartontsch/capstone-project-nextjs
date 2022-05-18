@@ -6,7 +6,7 @@ export default function SingelContactCard() {
 		<section>
 			{myContact.map(contact => {
 				return (
-					<section key={contact.id}>
+					<div key={contact.id}>
 						<h2>
 							{contact.firstName} {contact.lastName}
 						</h2>
@@ -15,7 +15,7 @@ export default function SingelContactCard() {
 						<p>{contact.email}</p>
 						<p>{contact.phone}</p>
 						<p>{contact.website}</p>
-					</section>
+					</div>
 				);
 			})}
 		</section>
