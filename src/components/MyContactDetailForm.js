@@ -41,19 +41,19 @@ export default function MyContactDetailForm() {
 				<input
 					{...register('phone', { required: true })}
 					name="phone"
-					type="text"
+					type="tel"
 					placeholder="Phone number"
 				/>
 				<input
 					{...register('email', { required: true })}
 					name="email"
-					type="text"
+					type="email"
 					placeholder="E-mail address"
 				/>
 				<input
 					{...register('website', { required: true })}
 					name="website"
-					type="text"
+					type="url"
 					placeholder="Website url"
 				/>
 				<button type="submit">Submit</button>

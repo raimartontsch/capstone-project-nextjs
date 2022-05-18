@@ -1,12 +1,12 @@
 import MyContactDetailForm from '../src/components/MyContactDetailForm';
-import SingelContactCard from '../src/components/SingleContactCard';
+import MyContactCard from '../src/components/MyContactCard';
 
 export default function Home() {
 	return (
 		<>
 			<div>Home</div>
 			<MyContactDetailForm />
-			<SingelContactCard />
+			<MyContactCard />
 		</>
 	);
 }
