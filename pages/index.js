@@ -1,12 +1,12 @@
 import MyContactDetailForm from '../src/components/MyContactDetailForm';
-import MyContactCard from '../src/components/MyContactCard';
+import MyContactList from '../src/components/MyContactList';
 
 export default function Home() {
 	return (
 		<>
 			<div>Home</div>
 			<MyContactDetailForm />
-			<MyContactCard />
+			<MyContactList />
 		</>
 	);
 }
