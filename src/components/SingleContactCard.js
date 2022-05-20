@@ -1,4 +1,4 @@
-export default function MyContactCard(contact) {
+export default function SingleContactCard(contact) {
 	return (
 		<li key={contact.id}>
 			<h2>
