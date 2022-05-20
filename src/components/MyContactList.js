@@ -1,6 +1,6 @@
-import MyContactCard from './MyContactCard';
 import useStore from './Store';
 import React from 'react';
+import SingleContactCard from './SingleContactCard';
 
 export default function ContactList() {
 	const myContact = useStore(state => state.myContact);
@@ -9,7 +9,7 @@ export default function ContactList() {
 		<ol>
 			{myContact.map(contact => {
 				return (
-					<MyContactCard
+					<SingleContactCard
 						key={contact.id}
 						firstName={contact.firstName}
 						lastName={contact.lastName}
