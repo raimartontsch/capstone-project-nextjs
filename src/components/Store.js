@@ -22,6 +22,11 @@ const useStore = create(
 						},
 					],
 				})),
+
+			deleteContact: id =>
+				set(state => ({
+					myContact: state.myContact.filter(contact => contact.id !== id),
+				})),
 		}),
 		{ name: 'B/Hub' }
 	)
