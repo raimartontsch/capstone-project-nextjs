@@ -13,6 +13,7 @@ export default function MyContactDetailForm() {
 
 	return (
 		<>
+			<h1>Edit Contact</h1>
 			<form onSubmit={handleSubmit(onSubmit)}>
 				<input
 					name="firstName"
