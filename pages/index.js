@@ -1,6 +1,6 @@
 import Footer from '../src/components/Footer';
 import MyContactDetailForm from '../src/components/MyContactDetailForm';
-import SingleContactCard from '../src/components/SingleContactCard';
+
 import dynamic from 'next/dynamic';
 //import CardGrid from '../src/components/CardGrid/CardGrid';
 
@@ -16,8 +16,6 @@ export default function Home() {
 			<MyContactDetailForm />
 			<hr />
 			<MyContactList />
-			<hr />
-			<SingleContactCard />
 			<hr />
 			<Footer />
 		</>
