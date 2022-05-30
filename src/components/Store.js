@@ -5,18 +5,11 @@ import { nanoid } from 'nanoid';
 const useStore = create(
 	persist(
 		set => ({
-			modal: false,
-			showEdit: () => {
-				set({ modal: true });
-			},
-			hideEdit: () => {
-				set({ modal: false });
-			},
-			myContact: [],
+			myContacts: [],
 			addMyContact: contact =>
 				set(state => ({
-					myContact: [
-						...state.myContact,
+					myContacts: [
+						...state.myContacts,
 						{
 							id: nanoid(),
 							firstName: contact.firstName,
@@ -26,41 +19,43 @@ const useStore = create(
 							phone: contact.phone,
 							email: contact.email,
 							website: contact.website,
+							edit: false,
 						},
 					],
 				})),
 
 			deleteContact: id =>
 				set(state => ({
-					myContact: state.myContact.filter(contact => contact.id !== id),
+					myContacts: state.myContacts.filter(contact => contact.id !== id),
 				})),
 
 			editContact: id =>
 				set(state => {
 					return {
-						myContact: state.myContact.map(updateContact => {
-							if (updateContact.id === id) {
+						myContacts: state.myContacts.map(myContact => {
+							if (myContact.id === id) {
 								return {
-									...updateContact,
-									edit: !updateContact.edit,
+									...myContact,
+									edit: !myContact.edit,
 								};
 							} else {
-								return updateContact;
+								return myContact;
 							}
 						}),
 					};
 				}),
 
-			controlEditContact: (id, data) => {
+			controlEditContact: (id, contact) => {
 				set(state => {
 					return {
-						myContact: state.myContact.map(updateContact =>
-							updateContact.id === id
+						myContacts: state.myContacts.map(myContact =>
+							myContact.id === id
 								? {
-										...updateContact,
-										...data,
+										...myContact,
+										...contact,
+										edit: !contact.edit,
 								  }
-								: updateContact
+								: myContact
 						),
 					};
 				});

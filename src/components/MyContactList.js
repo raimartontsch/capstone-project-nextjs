@@ -3,13 +3,13 @@ import React from 'react';
 import SingleContactCard from './SingleContactCard';
 
 export default function ContactList() {
-	const myContact = useStore(state => state.myContact);
+	const myContacts = useStore(state => state.myContacts);
 
 	return (
 		<>
 			<h1>Contact List</h1>
 			<ol>
-				{myContact.map(contact => {
+				{myContacts.map(contact => {
 					return (
 						<SingleContactCard
 							key={contact.id}
@@ -21,6 +21,7 @@ export default function ContactList() {
 							email={contact.email}
 							phone={contact.phone}
 							website={contact.website}
+							edit={contact.edit}
 						/>
 					);
 				})}

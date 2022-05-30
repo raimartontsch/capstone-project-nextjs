@@ -1,43 +1,55 @@
 import MyContactDetailForm from './MyContactDetailForm';
 import useStore from './Store';
 
-export default function SingleContactCard(contact) {
+export default function SingleContactCard({
+	id,
+	firstName,
+	lastName,
+	job,
+	company,
+	email,
+	phone,
+	website,
+	edit,
+}) {
 	const deleteContact = useStore(state => state.deleteContact);
 	const editContact = useStore(state => state.editContact);
 
 	return (
 		<>
-			{contact.edit ? (
-				<MyContactDetailForm id={contact.id} />
+			{edit ? (
+				<MyContactDetailForm id={id} />
 			) : (
-				<li key={contact.id} id={contact.id}>
+				<li key={id} id={id}>
 					<h2>
-						{contact.firstName} {contact.lastName}
+						{firstName} {lastName}
 					</h2>
-					<p>{contact.job}</p>
-					<p>{contact.company}</p>
-					<p>{contact.email}</p>
-					<p>{contact.phone}</p>
-					<p>{contact.website}</p>
+					<p>{job}</p>
+					<p>{company}</p>
+					<p>{email}</p>
+					<p>{phone}</p>
+					<p>{website}</p>
 				</li>
 			)}
 
 			<button
 				type="button"
 				onClick={() => {
-					deleteContact(contact.id);
+					deleteContact(id);
 				}}
 			>
 				Delete
 			</button>
-			<button
-				type="button"
-				onClick={() => {
-					editContact(contact.id);
-				}}
-			>
-				{contact.edit ? 'Save' : 'Edit'}
-			</button>
+			{!edit ? (
+				<button
+					type="button"
+					onClick={() => {
+						editContact(id);
+					}}
+				>
+					Edit
+				</button>
+			) : null}
 		</>
 	);
 }
