@@ -1,15 +1,36 @@
 import useStore from './Store';
 import { useForm } from 'react-hook-form';
+import { useEffect } from 'react';
 
-export default function MyContactDetailForm() {
-	const { register, handleSubmit, reset } = useForm();
-
-	const onSubmit = contact => {
-		addMyContact(contact);
-		reset();
-	};
-
+export default function MyContactDetailForm({ id }) {
+	const myContacts = useStore(state => state.myContacts);
 	const addMyContact = useStore(state => state.addMyContact);
+	const saveContact = useStore(state => state.saveContact);
+	const contactToUpdate = myContacts.find(contact => contact.id === id);
+
+	const { register, handleSubmit, reset, setValue } = useForm();
+
+	useEffect(() => {
+		if (contactToUpdate) {
+			setValue('firstName', contactToUpdate.firstName);
+			setValue('lastName', contactToUpdate.lastName);
+			setValue('job', contactToUpdate.job);
+			setValue('company', contactToUpdate.company);
+			setValue('phone', contactToUpdate.phone);
+			setValue('email', contactToUpdate.email);
+			setValue('website', contactToUpdate.website);
+			setValue('edit', contactToUpdate.edit);
+		}
+	}, [contactToUpdate, setValue]);
+
+	const onSubmit = data => {
+		if (contactToUpdate) {
+			saveContact(id, data);
+		} else {
+			addMyContact(data);
+			reset();
+		}
+	};
 
 	return (
 		<>
@@ -57,8 +78,9 @@ export default function MyContactDetailForm() {
 					type="url"
 					placeholder="Website url"
 				/>
-				<button type="submit">Submit</button>
+				<button type="submit">{contactToUpdate ? 'Save' : '+'}</button>
 			</form>
+
 			<hr />
 		</>
 	);
