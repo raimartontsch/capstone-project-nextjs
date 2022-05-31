@@ -5,8 +5,7 @@ import { useEffect } from 'react';
 export default function MyContactDetailForm({ id }) {
 	const myContacts = useStore(state => state.myContacts);
 	const addMyContact = useStore(state => state.addMyContact);
-	const editContact = useStore(state => state.editContact);
-	const controlEditContact = useStore(state => state.controlEditContact);
+	const saveContact = useStore(state => state.saveContact);
 	const contactToUpdate = myContacts.find(contact => contact.id === id);
 
 	const { register, handleSubmit, reset, setValue } = useForm();
@@ -26,8 +25,7 @@ export default function MyContactDetailForm({ id }) {
 
 	const onSubmit = data => {
 		if (contactToUpdate) {
-			editContact(id);
-			controlEditContact(id, data);
+			saveContact(id, data);
 		} else {
 			addMyContact(data);
 			reset();
@@ -80,7 +78,7 @@ export default function MyContactDetailForm({ id }) {
 					type="url"
 					placeholder="Website url"
 				/>
-				<button type="submit">+</button>
+				<button type="submit">{contactToUpdate ? 'Save' : '+'}</button>
 			</form>
 
 			<hr />

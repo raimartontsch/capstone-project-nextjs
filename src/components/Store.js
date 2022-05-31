@@ -36,7 +36,7 @@ const useStore = create(
 							if (myContact.id === id) {
 								return {
 									...myContact,
-									edit: !myContact.edit,
+									edit: true,
 								};
 							} else {
 								return myContact;
@@ -45,7 +45,7 @@ const useStore = create(
 					};
 				}),
 
-			controlEditContact: (id, contact) => {
+			saveContact: (id, contact) => {
 				set(state => {
 					return {
 						myContacts: state.myContacts.map(myContact =>
@@ -53,7 +53,7 @@ const useStore = create(
 								? {
 										...myContact,
 										...contact,
-										edit: !contact.edit,
+										edit: false,
 								  }
 								: myContact
 						),
