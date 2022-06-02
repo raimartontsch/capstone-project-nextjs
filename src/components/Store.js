@@ -60,12 +60,6 @@ const useStore = create(
 					};
 				});
 			},
-			id: [],
-			setId: id => {
-				set(() => {
-					return { id: id };
-				});
-			},
 		}),
 		{ name: 'B/Hub' }
 	)
