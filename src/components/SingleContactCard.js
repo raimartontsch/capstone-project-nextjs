@@ -1,6 +1,5 @@
 import MyContactDetailForm from './MyContactDetailForm';
 import useStore from './Store';
-import Link from 'next/link';
 
 export default function SingleContactCard({
 	id,
@@ -15,19 +14,16 @@ export default function SingleContactCard({
 }) {
 	const deleteContact = useStore(state => state.deleteContact);
 	const editContact = useStore(state => state.editContact);
-	const setId = useStore(state => state.setId);
-
 	return (
 		<>
 			{edit ? (
 				<MyContactDetailForm id={id} />
 			) : (
 				<li key={id} id={id}>
-					<Link href={{ pathname: '/profile/${id}', query: { id: 'id' } }}>
-						<h2 type="button" onClick={setId(id)}>
-							{firstName} {lastName}
-						</h2>
-					</Link>
+					<h2>
+						{firstName} {lastName}
+					</h2>
+
 					<p>{job}</p>
 					<p>{company}</p>
 					<p>{email}</p>
