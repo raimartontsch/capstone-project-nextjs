@@ -58,14 +58,17 @@ export default function SingleContactCard({
 				</li>
 			)}
 
-			<button
-				type="button"
-				onClick={() => {
-					deleteContact(id);
-				}}
-			>
-				Delete
-			</button>
+			{myContacts[0].id === id ? null : (
+				<button
+					type="button"
+					onClick={() => {
+						deleteContact(id);
+					}}
+				>
+					Delete
+				</button>
+			)}
+
 			{!edit ? (
 				<button
 					type="button"
