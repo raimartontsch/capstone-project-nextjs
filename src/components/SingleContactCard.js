@@ -1,6 +1,5 @@
 import MyContactDetailForm from './MyContactDetailForm';
 import useStore from './Store';
-import { useRouter } from 'next/router';
 import Link from 'next/link';
 
 export default function SingleContactCard({
@@ -16,8 +15,7 @@ export default function SingleContactCard({
 }) {
 	const deleteContact = useStore(state => state.deleteContact);
 	const editContact = useStore(state => state.editContact);
-	const router = useRouter();
-	console.log(router);
+	const myContacts = useStore(state => state.myContacts);
 
 	return (
 		<>
@@ -25,18 +23,33 @@ export default function SingleContactCard({
 				<MyContactDetailForm id={id} />
 			) : (
 				<li key={id} id={id}>
-					<Link
-						href={{
-							pathname: '/profile/[id]',
-							query: {
-								id: id,
-							},
-						}}
-					>
-						<h2>
-							{firstName} {lastName}
-						</h2>
-					</Link>
+					{myContacts[0].id === id ? (
+						<Link
+							href={{
+								pathname: '/profile/my-contact',
+								query: {
+									id: id,
+								},
+							}}
+						>
+							<h2>
+								{firstName} {lastName}
+							</h2>
+						</Link>
+					) : (
+						<Link
+							href={{
+								pathname: '/profile/[id]',
+								query: {
+									id: id,
+								},
+							}}
+						>
+							<h2>
+								{firstName} {lastName}
+							</h2>
+						</Link>
+					)}
 					<p>{job}</p>
 					<p>{company}</p>
 					<p>{email}</p>
