@@ -1,5 +1,4 @@
 import dynamic from 'next/dynamic';
-import Footer from '../../src/components/Footer';
 import useStore from '../../src/components/Store';
 
 export default function MyContact() {
@@ -10,20 +9,17 @@ export default function MyContact() {
 	//const myProfile = myContacts.filter(contact => contact.id === contact[0].id);
 
 	return (
-		<>
-			<SingleContactCard
-				key={myContacts?.id}
-				id={myContacts?.id}
-				firstName={myContacts?.firstName}
-				lastName={myContacts?.lastName}
-				job={myContacts?.job}
-				company={myContacts?.company}
-				email={myContacts?.email}
-				phone={myContacts?.phone}
-				website={myContacts?.website}
-				edit={myContacts?.edit}
-			/>
-			<Footer />
-		</>
+		<SingleContactCard
+			key={myContacts?.id}
+			id={myContacts?.id}
+			firstName={myContacts?.firstName}
+			lastName={myContacts?.lastName}
+			job={myContacts?.job}
+			company={myContacts?.company}
+			email={myContacts?.email}
+			phone={myContacts?.phone}
+			website={myContacts?.website}
+			edit={myContacts?.edit}
+		/>
 	);
 }

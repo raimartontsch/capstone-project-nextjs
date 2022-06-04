@@ -4,13 +4,13 @@ export default function Footer() {
 	return (
 		<>
 			<Link type="button" href="/profile/my-contact">
-				<button type="button">My Contact</button>
+				<a type="button">My Contact</a>
 			</Link>
 			<Link type="button" href="/add-contact">
-				<button type="button">Add contact</button>
+				<a type="button">Add contact</a>
 			</Link>
 			<Link type="button" href="/contact-list">
-				<button type="button">Contact list</button>
+				<a type="button">Contact list</a>
 			</Link>
 		</>
 	);

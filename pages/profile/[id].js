@@ -1,5 +1,4 @@
 import { useRouter } from 'next/router';
-import Footer from '../../src/components/Footer';
 import useStore from '../../src/components/Store';
 
 export default function Profile() {
@@ -18,7 +17,6 @@ export default function Profile() {
 			<p>{profile[0]?.phone}</p>
 			<p>{profile[0]?.email}</p>
 			<p>{profile[0]?.website}</p>
-			<Footer />
 		</>
 	);
 }

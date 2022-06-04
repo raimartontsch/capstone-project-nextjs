@@ -1,4 +1,3 @@
-import Footer from '../src/components/Footer';
 import dynamic from 'next/dynamic';
 //import CardGrid from '../src/components/CardGrid/CardGrid';
 
@@ -7,10 +6,5 @@ export default function contactListPage() {
 	const ContactList = dynamic(() => import('../src/components/MyContactList'), {
 		ssr: false, // This line important.
 	});
-	return (
-		<>
-			<ContactList />
-			<Footer />
-		</>
-	);
+	return <ContactList />;
 }
