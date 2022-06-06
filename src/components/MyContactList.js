@@ -8,8 +8,21 @@ export default function ContactList() {
 	return (
 		<>
 			<h1>Contact List</h1>
+			<SingleContactCard
+				key={myContacts[0].id}
+				id={myContacts[0].id}
+				firstName={myContacts[0].firstName}
+				lastName={myContacts[0].lastName}
+				job={myContacts[0].job}
+				company={myContacts[0].company}
+				email={myContacts[0].email}
+				phone={myContacts[0].phone}
+				website={myContacts[0].website}
+				edit={myContacts[0].edit}
+			/>
 			<ol>
-				{myContacts.map(contact => {
+				<hr />
+				{myContacts.slice(1).map(contact => {
 					return (
 						<SingleContactCard
 							key={contact.id}

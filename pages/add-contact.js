@@ -1,6 +1,5 @@
 import MyContactDetailForm from '../src/components/MyContactDetailForm';
 
-function contactDetailForm() {
+export default function addContactPage() {
 	return <MyContactDetailForm />;
 }
-export default contactDetailForm;
