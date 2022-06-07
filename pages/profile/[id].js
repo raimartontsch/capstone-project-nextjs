@@ -1,11 +1,16 @@
 import { useRouter } from 'next/router';
 import useStore from '../../src/components/Store';
+import dynamic from 'next/dynamic';
+
+//delete on mongoDB integration, only used for persist/localStorage (dynamic import with NO SSR form next.js docu --> https://nextjs.org/docs/advanced-features/dynamic-import)
+const QRCodeGenerator = dynamic(() => import('../../src/components/QRCodeGenerator'), {
+	ssr: false, // This line important.
+});
 
 export default function Profile() {
-	const router = useRouter();
-	const profileID = router.query;
+	const { query } = useRouter();
 	const myContacts = useStore(state => state.myContacts);
-	const profile = myContacts.filter(contact => contact.id === profileID.id);
+	const profile = myContacts.filter(contact => contact.id === query.id);
 
 	return (
 		<>
@@ -17,6 +22,8 @@ export default function Profile() {
 			<p>{profile[0]?.phone}</p>
 			<p>{profile[0]?.email}</p>
 			<p>{profile[0]?.website}</p>
+
+			<QRCodeGenerator />
 		</>
 	);
 }

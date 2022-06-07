@@ -5,7 +5,19 @@ import { nanoid } from 'nanoid';
 const useStore = create(
 	persist(
 		set => ({
-			myContacts: [],
+			myContacts: [
+				{
+					id: nanoid(),
+					firstName: 'Raimar',
+					lastName: 'Tontsch',
+					job: 'Web Dev',
+					company: 'Maybe your company',
+					phone: '01212',
+					email: 'raimar.tontsch@gmail.com',
+					website: 'none',
+					edit: false,
+				},
+			],
 			addMyContact: contact =>
 				set(state => ({
 					myContacts: [
@@ -67,7 +79,7 @@ const useStore = create(
 				});
 			},
 		}),
-		{ name: 'B/Hub' }
+		{ name: 'c.u' }
 	)
 );
 
