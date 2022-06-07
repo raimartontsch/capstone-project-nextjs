@@ -4,8 +4,10 @@ import useStore from '../../src/components/Store';
 export default function Profile() {
 	const router = useRouter();
 	const profileID = router.query;
+	const pathID = useRouter();
 	const myContacts = useStore(state => state.myContacts);
 	const profile = myContacts.filter(contact => contact.id === profileID.id);
+	console.log(pathID);
 
 	return (
 		<>
