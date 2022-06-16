@@ -1,3 +1,9 @@
+import { StartContainer } from '../src/components/UI/Start.Container.styled';
+
 export default function Home() {
-	return <h1>B/Hub</h1>;
+	return (
+		<StartContainer>
+			<div>C.U</div>
+		</StartContainer>
+	);
 }

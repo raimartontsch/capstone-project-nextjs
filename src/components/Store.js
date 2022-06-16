@@ -5,6 +5,12 @@ import { nanoid } from 'nanoid';
 const useStore = create(
 	persist(
 		set => ({
+			modaleState: null,
+			setModalState: modaleState => set({ modaleState }),
+			editmode: false,
+			showEditMode: () => {
+				set({ editmode: true });
+			},
 			myContacts: [
 				{
 					id: nanoid(),
@@ -12,9 +18,9 @@ const useStore = create(
 					lastName: 'Tontsch',
 					job: 'Web Dev',
 					company: 'Maybe your company',
-					phone: '01212',
+					phone: '060/1312',
 					email: 'raimar.tontsch@gmail.com',
-					website: 'none',
+					website: 'http://wtf.de',
 					edit: false,
 				},
 			],
