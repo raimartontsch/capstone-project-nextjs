@@ -13,7 +13,6 @@ describe('Form', () => {
 		const phone = screen.getByLabelText(/Phone:/i);
 		const email = screen.getByLabelText(/E-mail:/i);
 		const website = screen.getByLabelText(/Website:/i);
-	
 
 		expect(firstName).toBeInTheDocument();
 		expect(lastName).toBeInTheDocument();
