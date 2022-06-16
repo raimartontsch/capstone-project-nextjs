@@ -1,6 +1,13 @@
-import MyContactDetailForm from './MyContactDetailForm';
+import MyContactDetailForm from './Form/MyContactDetailForm';
 import useStore from './Store';
 import Link from 'next/link';
+import { ListItem } from './UI/List.Item.styled';
+import { DeleteButton } from './UI/Button/DeleteButton.styled';
+import { EditButton } from './UI/Button/EditButton.styled';
+import { Card } from './UI/Card/Card.styled';
+import { CallMailContainer } from './UI/CallMailContainer.styled';
+import { NavA } from './UI/NavA.styled';
+import { ButtonBox } from './UI/Button/ButtonBox.styled';
 
 export default function SingleContactCard({
 	id,
@@ -18,11 +25,11 @@ export default function SingleContactCard({
 	const myContacts = useStore(state => state.myContacts);
 
 	return (
-		<>
+		<Card>
 			{edit ? (
 				<MyContactDetailForm id={id} />
 			) : (
-				<li key={id} id={id}>
+				<ListItem key={id} id={id}>
 					{myContacts[0].id === id ? (
 						<Link
 							href={{
@@ -52,33 +59,39 @@ export default function SingleContactCard({
 					)}
 					<p>{job}</p>
 					<p>{company}</p>
-					<p>{email}</p>
-					<p>{phone}</p>
+					<CallMailContainer>
+						<Link href={`tel:${phone}`}>
+							<NavA>{phone}</NavA>
+						</Link>
+						<Link href={`mailto:${email}`}>
+							<NavA>{email}</NavA>
+						</Link>
+					</CallMailContainer>
 					<p>{website}</p>
-				</li>
+					<ButtonBox>
+						{myContacts[0].id === id ? null : (
+							<DeleteButton
+								type="button"
+								onClick={() => {
+									deleteContact(id);
+								}}
+							>
+								Delete
+							</DeleteButton>
+						)}
+						{!edit ? (
+							<EditButton
+								type="button"
+								onClick={() => {
+									editContact(id);
+								}}
+							>
+								Edit
+							</EditButton>
+						) : null}{' '}
+					</ButtonBox>
+				</ListItem>
 			)}
-
-			{myContacts[0].id === id ? null : (
-				<button
-					type="button"
-					onClick={() => {
-						deleteContact(id);
-					}}
-				>
-					Delete
-				</button>
-			)}
-
-			{!edit ? (
-				<button
-					type="button"
-					onClick={() => {
-						editContact(id);
-					}}
-				>
-					Edit
-				</button>
-			) : null}
-		</>
+		</Card>
 	);
 }
