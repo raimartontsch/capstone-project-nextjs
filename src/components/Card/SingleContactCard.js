@@ -1,13 +1,13 @@
-import MyContactDetailForm from './Form/MyContactDetailForm';
-import useStore from './Store';
+import MyContactDetailForm from '../Form/MyContactDetailForm';
+import useStore from '../Store';
 import Link from 'next/link';
-import { ListItem } from './UI/List.Item.styled';
-import { DeleteButton } from './UI/Button/DeleteButton.styled';
-import { EditButton } from './UI/Button/EditButton.styled';
-import { Card } from './UI/Card/Card.styled';
-import { CallMailContainer } from './UI/CallMailContainer.styled';
-import { NavA } from './UI/NavA.styled';
-import { ButtonBox } from './UI/Button/ButtonBox.styled';
+import { ListItem } from '../UI/List.Item.styled';
+import { DeleteButton } from '../UI/Button/DeleteButton.styled';
+import { EditButton } from '../UI/Button/EditButton.styled';
+import { Card } from '../UI/Card/Card.styled';
+import { CallMailContainer } from '../UI/CallMailContainer.styled';
+import { NavA } from '../UI/NavA.styled';
+import { ButtonBox } from '../UI/Button/ButtonBox.styled';
 
 export default function SingleContactCard({
 	id,

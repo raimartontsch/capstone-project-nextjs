@@ -1,6 +1,6 @@
 import React from 'react';
 import useStore from './Store';
-import SingleContactCard from './SingleContactCard';
+import SingleContactCard from './Card/SingleContactCard';
 import { Container } from './UI/Container.styled';
 import { ListStyle } from './UI/List.styled';
 import { Headline } from './UI/Headline.styled';

@@ -3,7 +3,7 @@ import useStore from '../../src/components/Store';
 import dynamic from 'next/dynamic';
 import { CardContainer } from '../../src/components/UI/Card/CardContainer.styled';
 import { QRWrapper } from '../../src/components/UI/Card/QRWrapper.styled';
-import SingleContactCard from '../../src/components/SingleContactCard';
+import SingleContactCard from '../../src/components/Card/SingleContactCard';
 import { Container } from '../../src/components/UI/Container.styled';
 
 //delete on mongoDB integration, only used for persist/localStorage (dynamic import with NO SSR form next.js docu --> https://nextjs.org/docs/advanced-features/dynamic-import)

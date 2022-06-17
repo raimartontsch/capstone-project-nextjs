@@ -1,10 +1,9 @@
 import { render, screen } from '@testing-library/react';
-import Form from './Form';
-import '@testing-library/jest-dom';
+import MyContactDetailForm from './MyContactDetailForm';
 
 describe('Form', () => {
 	it('render seven input fields on contact details', () => {
-		render(<Form />);
+		render(<MyContactDetailForm />);
 
 		const firstName = screen.getByLabelText(/First name:/i);
 		const lastName = screen.getByLabelText(/Last name:/i);
