@@ -9,7 +9,7 @@ import { ListStyle } from '../../src/components/UI/List.styled';
 const QRCodeGenerator = dynamic(() => import('../../src/components/QRCodeGenerator'), {
 	ssr: false, // This line important.
 });
-const SingleContactCard = dynamic(() => import('../../src/components/SingleContactCard'), {
+const SingleContactCard = dynamic(() => import('../../src/components/Card/SingleContactCard'), {
 	ssr: false, // This line important.
 });
 //const myProfile = myContacts.filter(contact => contact.id === contact[0].id);

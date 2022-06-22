@@ -49,7 +49,9 @@ export default function MyContactDetailForm({ id }) {
 						type="text"
 						{...register('firstName', { required: true, pattern: /\S(.*\S)?/ })}
 					/>
+
 					<LabelStyle>Last name</LabelStyle>
+
 					<Input
 						name="lastName"
 						type="text"
@@ -69,15 +71,20 @@ export default function MyContactDetailForm({ id }) {
 					/>
 					<LabelStyle>Phone</LabelStyle>
 					<Input
-						{...register('phone', { required: true, pattern: /\S(.*\S)?/ })}
+						{...register('phone', {
+							required: true,
+							valueAsNumber: true,
+							minLength: 6,
+							maxLength: 12,
+							pattern: /[+-]?\d+(?:[.,]\d+)?/,
+						})}
 						name="phone"
-						type="tel"
+						type="number"
 					/>
 					<LabelStyle>E-mail</LabelStyle>
 					<Input
-						{...register('email', { required: true, pattern: /\S(.*\S)?/ })}
+						{...register('email', { required: true, pattern: /^\S+@\S+$/i })}
 						name="email"
-						type="email"
 					/>
 					<LabelStyle>Website</LabelStyle>
 					<Input
@@ -85,6 +92,7 @@ export default function MyContactDetailForm({ id }) {
 						name="website"
 						type="url"
 					/>
+
 					<DeleteButton type="submit">{contactToUpdate ? 'Save' : '+'}</DeleteButton>
 				</FormStyle>
 			</Wrapper>
