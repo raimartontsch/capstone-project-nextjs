@@ -29,7 +29,6 @@ export default function MyContactDetailForm({ id }) {
 		}
 	}, [contactToUpdate, setValue]);
 
-
 	const onSubmit = data => {
 		if (contactToUpdate) {
 			saveContact(id, data);
@@ -48,11 +47,11 @@ export default function MyContactDetailForm({ id }) {
 					<Input
 						name="firstName"
 						type="text"
-						{...register('firstName', { required: true, pattern: /\S(.*\S)?/ })}					
+						{...register('firstName', { required: true, pattern: /\S(.*\S)?/ })}
 					/>
 
 					<LabelStyle>Last name</LabelStyle>
-				
+
 					<Input
 						name="lastName"
 						type="text"
@@ -72,7 +71,13 @@ export default function MyContactDetailForm({ id }) {
 					/>
 					<LabelStyle>Phone</LabelStyle>
 					<Input
-						{...register('phone', { required: true, valueAsNumber: true, minLength: 6, maxLength: 12, pattern:/[+-]?\d+(?:[.,]\d+)?/})}
+						{...register('phone', {
+							required: true,
+							valueAsNumber: true,
+							minLength: 6,
+							maxLength: 12,
+							pattern: /[+-]?\d+(?:[.,]\d+)?/,
+						})}
 						name="phone"
 						type="number"
 					/>
@@ -87,7 +92,7 @@ export default function MyContactDetailForm({ id }) {
 						name="website"
 						type="url"
 					/>
-					
+
 					<DeleteButton type="submit">{contactToUpdate ? 'Save' : '+'}</DeleteButton>
 				</FormStyle>
 			</Wrapper>
