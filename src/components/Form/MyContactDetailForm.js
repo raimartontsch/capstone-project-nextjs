@@ -14,7 +14,7 @@ export default function MyContactDetailForm({ id }) {
 	const saveContact = useStore(state => state.saveContact);
 	const contactToUpdate = myContacts.find(contact => contact.id === id);
 
-	const { register, handleSubmit, reset, setValue, formState: { errors } } = useForm();
+	const { register, handleSubmit, reset, setValue } = useForm();
 
 	useEffect(() => {
 		if (contactToUpdate) {
@@ -44,7 +44,7 @@ export default function MyContactDetailForm({ id }) {
 			<h1>Edit Contact</h1>
 			<Wrapper>
 				<FormStyle onSubmit={handleSubmit(onSubmit)}>
-				<LabelStyle>First name</LabelStyle>
+					<LabelStyle>First name</LabelStyle>
 					<Input
 						name="firstName"
 						type="text"
