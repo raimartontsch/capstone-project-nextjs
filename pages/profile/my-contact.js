@@ -1,5 +1,6 @@
 import dynamic from 'next/dynamic';
 import useStore from '../../src/components/Store';
+import { Card } from '../../src/components/UI/Card/Card.styled';
 import { CardContainer } from '../../src/components/UI/Card/CardContainer.styled';
 import { QRWrapper } from '../../src/components/UI/Card/QRWrapper.styled';
 import { Container } from '../../src/components/UI/Container.styled';
@@ -21,18 +22,20 @@ export default function MyContact() {
 		<Container>
 			<CardContainer>
 				<ListStyle>
-					<SingleContactCard
-						key={myContacts?.id}
-						id={myContacts?.id}
-						firstName={myContacts?.firstName}
-						lastName={myContacts?.lastName}
-						job={myContacts?.job}
-						company={myContacts?.company}
-						email={myContacts?.email}
-						phone={myContacts?.phone}
-						website={myContacts?.website}
-						edit={myContacts?.edit}
-					/>
+					<Card>
+						<SingleContactCard
+							key={myContacts?.id}
+							id={myContacts?.id}
+							firstName={myContacts?.firstName}
+							lastName={myContacts?.lastName}
+							job={myContacts?.job}
+							company={myContacts?.company}
+							email={myContacts?.email}
+							phone={myContacts?.phone}
+							website={myContacts?.website}
+							edit={myContacts?.edit}
+						/>
+					</Card>
 				</ListStyle>
 				<QRWrapper>
 					<QRCodeGenerator />
