@@ -1,15 +1,15 @@
 import React from 'react';
 import useStore from './Store';
 import SingleContactCard from './Card/SingleContactCard';
-import { Container } from './UI/Container.styled';
 import { ListStyle } from './UI/List.styled';
 import { Headline } from './UI/Headline.styled';
+import { ListContainer } from './UI/ListContainer';
 
 export default function ContactList() {
 	const myContacts = useStore(state => state.myContacts);
 
 	return (
-		<Container>
+		<ListContainer>
 			<Headline>Contact List</Headline>
 			<ListStyle>
 				{myContacts[0] && (
@@ -46,6 +46,6 @@ export default function ContactList() {
 					);
 				})}
 			</ListStyle>
-		</Container>
+		</ListContainer>
 	);
 }

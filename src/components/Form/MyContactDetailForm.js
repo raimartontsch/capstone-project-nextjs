@@ -88,7 +88,7 @@ export default function MyContactDetailForm({ id }) {
 					/>
 					<LabelStyle>Website</LabelStyle>
 					<Input
-						{...register('website', { required: true, pattern: /\S(.*\S)?/ })}
+						{...register('website', { pattern: /\S(.*\S)?/ })}
 						name="website"
 						type="url"
 					/>

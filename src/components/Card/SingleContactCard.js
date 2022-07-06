@@ -71,6 +71,7 @@ export default function SingleContactCard({
 					<ButtonBox>
 						{myContacts[0].id === id ? null : (
 							<DeleteButton
+								aria-label="Hit button to delete contact"
 								type="button"
 								onClick={() => {
 									deleteContact(id);
@@ -81,6 +82,7 @@ export default function SingleContactCard({
 						)}
 						{!edit ? (
 							<EditButton
+								aria-label="Hit button to edit contact"
 								type="button"
 								onClick={() => {
 									editContact(id);

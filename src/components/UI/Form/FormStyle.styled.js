@@ -6,4 +6,5 @@ export const FormStyle = styled.form`
 	align-items: center;
 	height: 90%;
 	width: 90%;
+	overflow: scroll;
 `;
