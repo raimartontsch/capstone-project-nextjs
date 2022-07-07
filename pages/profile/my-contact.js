@@ -4,7 +4,6 @@ import { Card } from '../../src/components/UI/Card/Card.styled';
 import { CardContainer } from '../../src/components/UI/Card/CardContainer.styled';
 import { QRWrapper } from '../../src/components/UI/Card/QRWrapper.styled';
 import { Container } from '../../src/components/UI/Container.styled';
-import { ListStyle } from '../../src/components/UI/List.styled';
 
 //delete on mongoDB integration, only used for persist/localStorage (dynamic import with NO SSR form next.js docu --> https://nextjs.org/docs/advanced-features/dynamic-import)
 const QRCodeGenerator = dynamic(() => import('../../src/components/QRCodeGenerator'), {
@@ -21,22 +20,20 @@ export default function MyContact() {
 	return (
 		<Container>
 			<CardContainer>
-				<ListStyle>
-					<Card>
-						<SingleContactCard
-							key={myContacts?.id}
-							id={myContacts?.id}
-							firstName={myContacts?.firstName}
-							lastName={myContacts?.lastName}
-							job={myContacts?.job}
-							company={myContacts?.company}
-							email={myContacts?.email}
-							phone={myContacts?.phone}
-							website={myContacts?.website}
-							edit={myContacts?.edit}
-						/>
-					</Card>
-				</ListStyle>
+				<Card>
+					<SingleContactCard
+						key={myContacts?.id}
+						id={myContacts?.id}
+						firstName={myContacts?.firstName}
+						lastName={myContacts?.lastName}
+						job={myContacts?.job}
+						company={myContacts?.company}
+						email={myContacts?.email}
+						phone={myContacts?.phone}
+						website={myContacts?.website}
+						edit={myContacts?.edit}
+					/>
+				</Card>
 				<QRWrapper>
 					<QRCodeGenerator />
 				</QRWrapper>

@@ -6,6 +6,11 @@ const useStore = create(
 	persist(
 		set => ({
 			modaleState: null,
+			modalMessage: {
+				add: 'The contact has been add to your contact list',
+				delete: 'Do you really want to delete this contact?',
+				updated: 'Your contact has been updated',
+			},
 			setModalState: modaleState => set({ modaleState }),
 			editmode: false,
 			showEditMode: () => {

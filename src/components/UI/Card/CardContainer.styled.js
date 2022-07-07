@@ -5,7 +5,7 @@ export const CardContainer = styled.div`
 	flex-direction: column;
 	align-self: center;
 	height: overflow;
-	width: 75%;
+	width: 95%;
 	background-color: #efc1e5;
 	border-radius: 2em;
 	gap: 1em;
