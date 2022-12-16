@@ -1,12 +1,13 @@
 import Cu from '../public/Cu';
-import { StartContainer } from '../src/components/UI/Start.Container.styled';
+import { SiteContainer } from '../src/components/UI/SiteContainer.styled';
 
 export default function Home() {
 	return (
-		<StartContainer>
+		<SiteContainer>
 			<div>
 				<Cu />
+				<p>blubb</p>
 			</div>
-		</StartContainer>
+		</SiteContainer>
 	);
 }

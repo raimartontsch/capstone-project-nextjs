@@ -9,11 +9,10 @@ body {
 	margin: 0;
 	font-family: 'Hind', sans-serif;
 	font-size: 1.6rem;
-	background: #eaf7fd;
 
 	}
 	*{
-		box-sizing: border-box
+		box-sizing: border-box;
 	}
 	:root {
 		--primary-color: #57c3ef;

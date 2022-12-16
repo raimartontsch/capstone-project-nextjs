@@ -7,5 +7,4 @@ export const Container = styled.div`
 	height: overflow;
 	width: 100%;
 	padding: 0.5em;
-	position: absolute;
 `;
