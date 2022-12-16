@@ -5,7 +5,7 @@ export const StartContainer = styled.div`
 	justify-self: center;
 	justify-content: center;
 	top: 35vh;
-	background-color: transparent;
+	background-color: blue;
 	padding: 0.5em;
 	position: relative;
 `;

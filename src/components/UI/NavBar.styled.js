@@ -9,7 +9,8 @@ export const NavBar = styled.nav`
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	height: 3em;
+	height: 6vh;
 	background: #57c3ef;
+	opacity: 0.65;
 	z-index: 3;
 `;

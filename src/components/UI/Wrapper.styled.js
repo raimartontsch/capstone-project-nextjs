@@ -3,12 +3,16 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
 	display: flex;
 	flex-direction: column;
-	justify-self: center;
-	align-items: center;
 	justify-content: center;
-	border-radius: 2em;
+	align-items: center;
+	border-radius: 1em;
 	width: 90%;
-	background-color: #efc1e5;
+	height: 80%;
+	background-color: grey;
 	padding: 0.5em;
-	position: relative;
+
+	@media (max-width: 550px) {
+		width: 100%;
+		height: 100%;
+	}
 `;

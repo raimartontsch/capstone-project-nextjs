@@ -1,13 +1,13 @@
-import MyContactDetailForm from '../Form/MyContactDetailForm';
 import useStore from '../Store';
 import Link from 'next/link';
 import { ListItem } from '../UI/List.Item.styled';
 import { DeleteButton } from '../UI/Button/DeleteButton.styled';
 import { EditButton } from '../UI/Button/EditButton.styled';
-import { Card } from '../UI/Card/Card.styled';
+import { ContactCard } from '../UI/Card/ContactCard.styled';
 import { CallMailContainer } from '../UI/CallMailContainer.styled';
 import { NavA } from '../UI/NavA.styled';
 import { ButtonBox } from '../UI/Button/ButtonBox.styled';
+import MyContactDetailForm from '../Form/MyContactDetailForm';
 
 export default function SingleContactCard({
 	id,
@@ -25,9 +25,9 @@ export default function SingleContactCard({
 	const myContacts = useStore(state => state.myContacts);
 
 	return (
-		<Card>
+		<ContactCard>
 			{edit ? (
-				<MyContactDetailForm id={id} />
+				<MyContactDetailForm key={id} id={id} />
 			) : (
 				<ListItem key={id} id={id}>
 					{myContacts[0].id === id ? (
@@ -80,20 +80,19 @@ export default function SingleContactCard({
 								Delete
 							</DeleteButton>
 						)}
-						{!edit ? (
-							<EditButton
-								aria-label="Hit button to edit contact"
-								type="button"
-								onClick={() => {
-									editContact(id);
-								}}
-							>
-								Edit
-							</EditButton>
-						) : null}{' '}
+
+						<EditButton
+							aria-label="Hit button to edit contact"
+							type="button"
+							onClick={() => {
+								editContact(id);
+							}}
+						>
+							Edit
+						</EditButton>
 					</ButtonBox>
 				</ListItem>
 			)}
-		</Card>
+		</ContactCard>
 	);
 }

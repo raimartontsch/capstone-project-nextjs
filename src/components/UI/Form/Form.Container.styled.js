@@ -2,10 +2,10 @@ import styled from 'styled-components';
 
 export const FormContainer = styled.div`
 	display: flex;
-	justify-self: center;
-	justify-content: center;
-	align-content: space-around;
 	flex-direction: column;
-	background-color: transparent;
+	background-color: pink;
 	align-items: center;
+	width: 100%;
+	top: 15%;
+	padding: 0.5rem;
 `;

@@ -1,8 +1,13 @@
 import styled from 'styled-components';
 
 export const EditButton = styled.button`
-	width: 75px;
-	border-radius: 1.5em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 7rem;
 	color: black;
 	background-color: #efc1e5;
+	border-radius: 0.5rem;
+	padding: 0.5rem;
+	text-decoration-line: none;
 `;
