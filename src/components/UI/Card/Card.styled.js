@@ -5,5 +5,4 @@ export const Card = styled.div`
 	align-items: center;
 	justify-content: center;
 	width: 100%;
-	background-color: pink;
 `;

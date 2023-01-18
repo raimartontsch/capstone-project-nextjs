@@ -10,7 +10,7 @@ export const NavBar = styled.nav`
 	left: 0;
 	width: 100%;
 	height: 6vh;
-	background: #57c3ef;
+	background: #31c5f2;
 	opacity: 0.65;
 	z-index: 3;
 `;

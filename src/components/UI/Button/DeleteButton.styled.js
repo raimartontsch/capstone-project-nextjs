@@ -5,6 +5,7 @@ export const DeleteButton = styled.button`
 	justify-content: center;
 	align-items: center;
 	width: 7rem;
+	border-style: none;
 	border-radius: 1.5em;
 	color: black;
 	background-color: #57c3ef;

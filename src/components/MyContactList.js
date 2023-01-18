@@ -28,14 +28,18 @@ export default function ContactList() {
 							edit={myContacts[0].edit}
 						/>
 					)}
+					<hr />
 
-					{myContacts.slice(1).map(contact => {
+					{myContacts.map(contact => {
 						{
-							myContacts.slice(1).sort(function (a, b) {
-								if (a.lastName < b.lastName) {
+							myContacts.sort(function (a, b) {
+								const nameA = a.lastName.toUpperCase();
+								const nameB = b.lastName.toUpperCase();
+
+								if (nameA < nameB) {
 									return -1;
 								}
-								if (a.lastName > b.lastName) {
+								if (nameA > nameB) {
 									return 1;
 								}
 								return 0;

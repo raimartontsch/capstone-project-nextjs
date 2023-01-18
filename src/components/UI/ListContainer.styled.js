@@ -5,8 +5,6 @@ export const ListContainer = styled.div`
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	width: 99%;
+	width: 100%;
 	height: 90vh;
-	border: solid 1px black;
-	background-color: yellow; ;
 `;

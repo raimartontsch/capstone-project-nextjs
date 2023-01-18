@@ -7,7 +7,7 @@ const GlobalStyle = createGlobalStyle`
 body {
 	padding: 0;
 	margin: 0;
-	font-family: 'Hind', sans-serif;
+	font-family: Arimo, sans-serif;
 	font-size: 1.6rem;
 
 	}
@@ -16,7 +16,7 @@ body {
 	}
 	:root {
 		--primary-color: #57c3ef;
-		--secondary-color: #eeeeee:;
+		--secondary-color: #1ba098:;
 		--tertiary-color:#efc1e5:
 		
 	}
