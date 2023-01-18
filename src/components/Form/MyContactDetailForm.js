@@ -32,7 +32,6 @@ export default function MyContactDetailForm({ id }) {
 
 	const onSubmit = data => {
 		if (contactToUpdate) {
-			console.log('Moin');
 			saveContact(id, data);
 		} else {
 			addMyContact(data);

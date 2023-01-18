@@ -8,6 +8,6 @@ export const SiteContainer = styled.div`
 	width: 100vw;
 	height: 94vh;
 	top: 0;
-	background-color: purple;
+	background-color: #fbf4de;
 	overflow: scroll;
 `;

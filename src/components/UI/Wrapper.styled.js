@@ -8,7 +8,6 @@ export const Wrapper = styled.div`
 	border-radius: 1em;
 	width: 90%;
 	height: 80%;
-	background-color: grey;
 	padding: 0.5em;
 
 	@media (max-width: 550px) {

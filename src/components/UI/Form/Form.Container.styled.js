@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const FormContainer = styled.div`
 	display: flex;
 	flex-direction: column;
-	background-color: pink;
+	background-color: transparent;
 	align-items: center;
 	width: 100%;
 	top: 15%;
